@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  weather-microservice:
+    build:
+      context: ./WeatherMicroservice
+      dockerfile: Dockerfile
+    environment:
+      - WEATHER_API_TOKEN=changeme
+      - OPENWEATHER_API_KEY=changeme
+    ports:
+      - "5000:80"
+    restart: unless-stopped
