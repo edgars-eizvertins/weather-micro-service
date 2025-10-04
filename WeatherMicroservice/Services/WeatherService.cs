@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 using WeatherMicroservice.Clients;
 using WeatherMicroservice.Models;
 
@@ -19,8 +15,13 @@ namespace WeatherMicroservice.Services
 
 		public async Task<WeatherResponse?> GetWeatherAsync(string city, string country)
 		{
-			var currentDoc = await _client.GetCurrentWeatherAsync(city, country);
-			var forecastDoc = await _client.GetForecastAsync(city, country);
+			var currentDocTask = _client.GetCurrentWeatherAsync(city, country);
+			var forecastDocTask = _client.GetForecastAsync(city, country);
+			await Task.WhenAll(currentDocTask, forecastDocTask);
+
+			var currentDoc = currentDocTask.Result;
+			var forecastDoc = forecastDocTask.Result;
+
 			if (currentDoc == null || forecastDoc == null) return null;
 
 			var response = new WeatherResponse

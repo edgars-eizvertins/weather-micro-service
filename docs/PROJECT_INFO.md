@@ -30,5 +30,21 @@
 - Token must match configured value.
 - Logging and error handling are included.
 
+## Running & Testing
+
+- To run the app locally (both HTTP and HTTPS):
+
+```bash
+dotnet run --project WeatherMicroservice/WeatherMicroservice.csproj --urls "http://localhost:5000;https://localhost:5001"
+```
+
+- To run tests from the terminal:
+
+```bash
+dotnet test WeatherMicroservice.Tests/WeatherMicroservice.Tests.csproj
+```
+
+- Test Explorer in VS Code: ensure the Microsoft C# extension is installed (C# Dev Kit or OmniSharp). Reload the window after installing. The Test Explorer should discover tests from the `WeatherMicroservice.Tests` project. If tests run in the terminal but not in the Test Explorer, open the test project folder in the workspace root and check the "Output" pane for the test adapter logs.
+
 ---
 This file will be updated with any changes to requirements or project scope.

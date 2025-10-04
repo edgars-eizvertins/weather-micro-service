@@ -19,6 +19,7 @@ This document describes the architecture of the Weather Microservice.
 - WeatherController: Handles API requests.
 - WeatherService: Fetches and processes weather data.
 - OpenWeatherClient: Communicates with OpenWeather API.
+- OpenWeatherClient (implements IOpenWeatherClient): Communicates with OpenWeather API. The client is registered via DI as `IOpenWeatherClient` to allow easy testing and mocking.
 - AuthenticationMiddleware: Validates token from query parameter.
 - Logging: Basic logging using .NET built-in logging.
 
