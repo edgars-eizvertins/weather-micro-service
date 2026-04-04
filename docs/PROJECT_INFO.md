@@ -24,6 +24,7 @@
 
 ## Instructions
 - Set your `WEATHER_API_TOKEN` and `OPENWEATHER_API_KEY` in `appsettings.json`, environment, or docker-compose.
+ - For local development, copy `WeatherMicroservice/appsettings.json.template` to `WeatherMicroservice/appsettings.Development.json` and put your secrets there. `appsettings.Development.json` is ignored by git to avoid committing secrets.
 - Build and run with Docker or Docker Compose for x64/arm64 (see DEPLOYMENT.md).
 - API endpoint: `/api/weather?city={city}&country={country}&token={token}`
 - Returns JSON with current weather, hourly and 3-day forecast (metric units).

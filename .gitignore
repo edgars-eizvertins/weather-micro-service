@@ -41,6 +41,10 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 
+# Local appsettings with secrets
+WeatherMicroservice/appsettings.Development.json
+WeatherMicroservice/appsettings.Local.json
+
 # MSBuild Binary and Structured Log
 *.binlog
 

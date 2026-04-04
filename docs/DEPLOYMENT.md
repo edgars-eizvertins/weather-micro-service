@@ -42,6 +42,10 @@ dotnet run --project WeatherMicroservice/WeatherMicroservice.csproj --urls "http
 
 In VS Code debugging, `launch.json` and `launchSettings.json` have been prepared to expose both endpoints. If HTTP still doesn't work in the debugger, run the command above in the terminal to confirm.
 
+## Local secrets (do not commit)
+
+Create `WeatherMicroservice/appsettings.Development.json` from the provided `appsettings.json.template` and add your `WEATHER_API_TOKEN` and `OPENWEATHER_API_KEY` there. That file is listed in `.gitignore` and will not be committed.
+
 ## Updating Tokens
 - Change the value in your environment or Docker Compose file and restart the service.
 
